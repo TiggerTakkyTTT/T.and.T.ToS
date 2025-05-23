@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -17,17 +18,27 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  background: linear-gradient(135deg, #4f86f7, #007bff);
 }
+
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
+
 .navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.2s;
 }
+
+.navbar a:hover,
+.navbar a:focus {
+  color: #ffeb3b;
+}
+
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
@@ -39,15 +50,18 @@ body {
   background: linear-gradient(135deg, #4f86f7, #007bff);
   color: white;
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 4rem 1rem 2rem 1rem;
 }
+
 .hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
+
 .hero-content p {
   font-size: 1.2rem;
 }
+
 .btn {
   margin-top: 1.5rem;
   background: #ffeb3b;
@@ -57,6 +71,13 @@ body {
   font-weight: bold;
   display: inline-block;
   text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #ffe066;
+  color: #222;
 }
 
 /* Cards Section */
@@ -67,20 +88,28 @@ body {
   gap: 2rem;
   padding: 3rem 1rem;
 }
+
 .card {
   background: white;
   padding: 2rem;
   border-radius: 8px;
   width: 300px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .card:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.15);
 }
+
 .card h2 {
   color: #007bff;
   margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin-bottom: 0;
 }
 
 /* Footer */
@@ -89,4 +118,45 @@ footer {
   padding: 1rem;
   background: #007bff;
   color: white;
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .cards {
+    gap: 1rem;
+  }
+  .card {
+    width: 250px;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0.5rem;
+  }
+
+  .card {
+    width: 95%;
+    max-width: 350px;
+    margin-bottom: 1rem;
+  }
+
+  .hero {
+    padding: 2.5rem 0.5rem 1.2rem 0.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
 }
